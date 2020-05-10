@@ -1,2 +1,2 @@
 # beemis-reloaded
-The discord version of Beemis.
+A simple discord bot used for python experience- and to prove a point.
