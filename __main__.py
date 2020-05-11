@@ -1,13 +1,15 @@
-import os
+# for pulling
 
-from discord.ext.commands import Bot
-import discord.ext.commands
-import pkgutil # for dynamic importing
+# dynamic importing tools
+import pkgutil
 from importlib import import_module
 from inspect import isclass
 
+# beemis himself
+from bot import Beemis
+
 if __name__ == "__main__":
-    bot = Bot("!")
+    bot = Beemis("!")
     # for all modules in the commands folder
     for (_, name, _) in pkgutil.walk_packages(path=['commands']):
         # get fully qualified module name, and import module
