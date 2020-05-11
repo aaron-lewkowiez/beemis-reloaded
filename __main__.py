@@ -11,7 +11,7 @@ from inspect import isclass
 from bot import Beemis
 
 if __name__ == "__main__":
-    # instantiate the bot
+    # instantiate the bot (no prefix so we can catch keywords)
     bot = Beemis("")
 
     # dynamic import of all commands and cogs. god help us when this must be changed:
@@ -38,7 +38,7 @@ if __name__ == "__main__":
             if isclass(obj) and issubclass(obj, discord.ext.commands.Cog):
                 # import each cog
                 bot.add_cog(obj(bot))
-                print("loaded cog {}".format(type(obj).__name__))
+                print("loaded cog {}".format(name))
     # start the bot
     try:
         bot.run(os.environ['DISCORD_TOKEN'])
